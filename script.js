@@ -1,9 +1,3 @@
-/*
-Pulsante numero aggiunge numero al buffer, ed esegue operazione tra gli ultimi due numeri dell'array (se singolo, non fa niente)
-Pulsante operazione cambia valore variabile operator
-Uguale chiama array.reduce, rende operator undefined e ritorna il risultato
-*/
-
 let operator;
 let number = [];
 let buffer = [];
@@ -20,17 +14,53 @@ function clear() {
 };
 
 function operate(sign) {
+
+    if (!operator) {
+
     number = buffer.join('');
-    buffer2.push(parseInt(number));
+    buffer2.push(parseFloat(number));
     operator = sign;
     buffer = [];
-    number = [];    
+    number = [];  
+
+    } else {
+
+        number = buffer.join('');
+        buffer2.push(parseFloat(number));
+        buffer = [];
+        number = [];
+        
+
+        switch(operator) {
+            case '+':
+                result = buffer2.reduce((a, b) => {return a + b});
+                break;
+            case '-':
+                result = buffer2.reduce((a, b) => {return a - b});
+                break;
+            case '*':
+                result = buffer2.reduce((a, b) => {return a * b});
+                break;
+            case '/':
+                result = buffer2.reduce((a, b) => {return a / b});
+                break;
+               
+        }
+        
+        operator = sign;
+        console.log(operator)
+        buffer2[0] = result;
+        buffer2.splice(1, 1);
+        result = undefined;
+
+    }
 }
 
 
 function equals() {
+
     number = buffer.join('');
-    buffer2.push(parseInt(number));
+    buffer2.push(parseFloat(number));
 
     switch(operator) {
         case '+':
@@ -53,29 +83,7 @@ function equals() {
     console.log(result);
 
     clear();
-    
+
 }
-
-// function add(...args) {
-//     const result = args.reduce((a, b) => {return a + b})
-//     return result;    
-    
-// }
-
-// function subtract(...args) {
-//     const result = args.reduce((a, b) => {return a - b})
-//     return result;
-// }
-
-// function multiply(...args) {
-//     const result = args.reduce((a, b) => {return a * b})
-//     return result;
-// }
-
-// function divide(...args) {
-//     const result = args.reduce((a, b) => {return a / b})
-//     return result;
-// }
-
 
 
