@@ -6,24 +6,38 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-             
-        <button id="7" value="7" onclick="buffer.push(this.value)">7</button>
-        <button id="8" value="8"onclick="buffer.push(this.value)">8</button>
-        <button id="9" value="9"onclick="buffer.push(this.value)">9</button><br>
-        <button id="4" value="4"onclick="buffer.push(this.value)">4</button>
-        <button id="5" value="5"onclick="buffer.push(this.value)">5</button>
-        <button id="6" value="6"onclick="buffer.push(this.value)">6</button><br>
-        <button id="1" value="1"onclick="buffer.push(this.value)">1</button>
-        <button id="2" value="2"onclick="buffer.push(this.value)">2</button>
-        <button id="3" value="3"onclick="buffer.push(this.value)">3</button><br>
-        <button id="0" value="0"onclick="buffer.push(this.value)">0</button>
-        <button id="." value="."onclick="buffer.push(this.value)">.</button><br>
-        <button id="plus" value="+" onclick="operate(this.value)">+</button>
-        <button id="minus" value="-" onclick="operate(this.value)">-</button>
-        <button id="mult" value="*" onclick="operate(this.value)">*</button>
-        <button id="divid" value="/" onclick="operate(this.value)">/</button>
-        <button id="equals" value="=" onclick="equals(buffer2)">=</button>
-        <button id="clear" onclick="clear()">Clear</button>
+        <div class="calculator">
+            <div class="text">
+                <p id="display"></p>
+            </div>
+            <div class="buttons">
+                <div class="numbers">     
+                    <button id="7" value="7" onclick="buffer.push(this.value); display.textContent += '7'">7</button>
+                    <button id="8" value="8" onclick="buffer.push(this.value); display.textContent += '8'">8</button>
+                    <button id="9" value="9" onclick="buffer.push(this.value); display.textContent += '9'">9</button><br>
+                    <button id="4" value="4" onclick="buffer.push(this.value); display.textContent += '4'">4</button>
+                    <button id="5" value="5" onclick="buffer.push(this.value); display.textContent += '5'">5</button>
+                    <button id="6" value="6" onclick="buffer.push(this.value); display.textContent += '6'">6</button><br>
+                    <button id="1" value="1" onclick="buffer.push(this.value); display.textContent += '1'">1</button>
+                    <button id="2" value="2" onclick="buffer.push(this.value); display.textContent += '2'">2</button>
+                    <button id="3" value="3" onclick="buffer.push(this.value); display.textContent += '3'">3</button><br>
+                    <button id="0" value="0" onclick="buffer.push(this.value); display.textContent += '0'">0</button>
+                    <button id="." value="." onclick="buffer.push(this.value); display.textContent += '.'">.</button>
+                </div>
+                <div class="signs">    
+                    <button id="plus" value="+" onclick="operate(this.value); display.textContent += ' + '">+</button>
+                    <button id="minus" value="-" onclick="operate(this.value); display.textContent += ' - '">-</button>
+                    <button id="mult" value="*" onclick="operate(this.value); display.textContent += ' * ' ">*</button>
+                    <button id="divid" value="/" onclick="operate(this.value); display.textContent += ' : '">/</button>
+                    <button id="equals" value="=" onclick="equals(buffer2)">=</button>
+                </div>
+                <div class="utility">
+                    <button id="clear" onclick="clear(); display.textContent = ''">Clear</button>
+                </div>
+            </div>
+        </div>
+
         <script src="script.js"></script>
+
     </body>
 </html>

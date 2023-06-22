@@ -1,15 +1,18 @@
 let operator;
-let number = [];
 let buffer = [];
 let buffer2 = [];
 let result;
+const display = document.getElementById('display');
+
+
+
 
 function clear() {
 
     buffer = [];
-    buffer2 = [];
-    number = [];  
+    buffer2 = [];    
     operator = undefined;
+    display.textContent = "0";    
 
 };
 
@@ -17,16 +20,16 @@ function operate(sign) {
 
     if (!operator) {
 
-    number = buffer.join('');
-    buffer2.push(parseFloat(number));
+    
+    buffer2.push(parseFloat(buffer.join('')));
     operator = sign;
     buffer = [];
     number = [];  
 
     } else {
 
-        number = buffer.join('');
-        buffer2.push(parseFloat(number));
+        
+        buffer2.push(parseFloat(buffer.join('')));
         buffer = [];
         number = [];
         
@@ -46,21 +49,30 @@ function operate(sign) {
                 break;
                
         }
+
+        if (result === Infinity) {
+
+            display.textContent = "Cannot divide by 0";
+            clear();
+
+        } else {
         
         operator = sign;
-        console.log(operator)
+        display.textContent = result;
         buffer2[0] = result;
         buffer2.splice(1, 1);
         result = undefined;
 
+
+        }
     }
 }
 
 
 function equals() {
-
-    number = buffer.join('');
-    buffer2.push(parseFloat(number));
+    
+    
+    buffer2.push(parseFloat(buffer.join('')));
 
     switch(operator) {
         case '+':
@@ -76,13 +88,22 @@ function equals() {
             result = buffer2.reduce((a, b) => {return a / b});
             break;
         default:
-            console.log("error: enter a second value")
+            display.textContent =  "error: enter a second value";
+
+    }
+    if (result === Infinity) {
+
+        display.textContent = "Cannot divide by 0";
+        
+    } else {
+
+        display.textContent = result;
 
     }
 
-    console.log(result);
-
-    clear();
+    buffer = [];
+    buffer2 = [];    
+    operator = undefined;
 
 }
 
