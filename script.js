@@ -3,8 +3,7 @@ let buffer = [];
 let buffer2 = [];
 let result;
 const display = document.getElementById('display');
-
-
+const buttons = document.querySelectorAll('button');
 
 
 function clear() {
@@ -12,7 +11,7 @@ function clear() {
     buffer = [];
     buffer2 = [];    
     operator = undefined;
-    display.textContent = "0";    
+    display.textContent = "";    
 
 };
 
@@ -23,13 +22,26 @@ function operate(sign) {
     
     buffer2.push(parseFloat(buffer.join('')));
     operator = sign;
+    display.textContent += ` ${operator} `
     buffer = [];
     number = [];  
 
     } else {
 
+        if (!buffer.length) {
+            
+            buffer = [];
+            buffer2 = [];    
+            operator = undefined;
+            alert("Operator already in queue");
+            clear();
+            return;
+            
+        }
+
         
         buffer2.push(parseFloat(buffer.join('')));
+        
         buffer = [];
         number = [];
         
@@ -52,13 +64,14 @@ function operate(sign) {
 
         if (result === Infinity) {
 
-            display.textContent = "Cannot divide by 0";
+            alert("Cannot divide by 0");
             clear();
 
         } else {
         
         operator = sign;
         display.textContent = result;
+        display.textContent += ` ${operator} `
         buffer2[0] = result;
         buffer2.splice(1, 1);
         result = undefined;
@@ -71,8 +84,17 @@ function operate(sign) {
 
 function equals() {
     
+
+    // if (buffer2.length === 1) {
+
+    //     alert("Enter a second value");
+    //     clear();
+    //     return;
+
+    // }
     
     buffer2.push(parseFloat(buffer.join('')));
+    
 
     switch(operator) {
         case '+':
@@ -88,12 +110,12 @@ function equals() {
             result = buffer2.reduce((a, b) => {return a / b});
             break;
         default:
-            display.textContent =  "error: enter a second value";
+            alert("error: enter a second value");
 
     }
     if (result === Infinity) {
 
-        display.textContent = "Cannot divide by 0";
+        alert("Cannot divide by 0");
         
     } else {
 
@@ -103,7 +125,7 @@ function equals() {
 
     buffer = [];
     buffer2 = [];    
-    operator = undefined;
+    operator = undefined;    
 
 }
 

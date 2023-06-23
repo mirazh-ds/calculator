@@ -25,10 +25,10 @@
                     <button id="." value="." onclick="buffer.push(this.value); display.textContent += '.'">.</button>
                 </div>
                 <div class="signs">    
-                    <button id="plus" value="+" onclick="operate(this.value); display.textContent += ' + '">+</button>
-                    <button id="minus" value="-" onclick="operate(this.value); display.textContent += ' - '">-</button>
-                    <button id="mult" value="*" onclick="operate(this.value); display.textContent += ' * ' ">*</button>
-                    <button id="divid" value="/" onclick="operate(this.value); display.textContent += ' : '">/</button>
+                    <button id="plus" value="+" onclick="operate(this.value)">+</button>
+                    <button id="minus" value="-" onclick="operate(this.value)">-</button>
+                    <button id="mult" value="*" onclick="operate(this.value)">*</button>
+                    <button id="divid" value="/" onclick="operate(this.value)">/</button>
                     <button id="equals" value="=" onclick="equals(buffer2)">=</button>
                 </div>
                 <div class="utility">
@@ -37,7 +37,7 @@
             </div>
         </div>
 
-        <script src="script.js"></script>
+        <script src="script.js" defer></script>
 
     </body>
 </html>
