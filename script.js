@@ -5,6 +5,36 @@ let result;
 const display = document.getElementById('display');
 const buttons = document.querySelectorAll('button');
 
+function queue(num) {
+
+    if (result) {
+
+        display.textContent = ""
+        result = undefined;
+        
+    }
+
+    buffer.push(num);
+    display.textContent += `${num}`;
+    
+
+}
+
+function decimal() {
+
+    if (buffer.includes('.')) {
+        alert("Don't try to create an IP address out of your value");
+        clear();
+        return;
+    }
+
+    buffer.push('.');
+    display.textContent += '.';
+
+    
+}
+
+
 
 function clear() {
 
