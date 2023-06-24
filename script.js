@@ -3,7 +3,6 @@ let buffer = [];
 let buffer2 = [];
 let result;
 const display = document.getElementById('display');
-const buttons = document.querySelectorAll('button');
 
 function queue(num) {
 
@@ -11,7 +10,7 @@ function queue(num) {
 
         display.textContent = ""
         result = undefined;
-        
+
     }
 
     buffer.push(num);
@@ -34,7 +33,13 @@ function decimal() {
     
 }
 
+function backspace() {
 
+    buffer.pop();
+    let string = display.textContent.slice(0, -1);
+    display.textContent = string;
+
+}
 
 function clear() {
 
@@ -111,17 +116,7 @@ function operate(sign) {
     }
 }
 
-
 function equals() {
-    
-
-    // if (buffer2.length === 1) {
-
-    //     alert("Enter a second value");
-    //     clear();
-    //     return;
-
-    // }
     
     buffer2.push(parseFloat(buffer.join('')));
     

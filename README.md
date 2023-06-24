@@ -15,5 +15,4 @@ Basic calculator project.
 
 # To fix:
 
-1 - multiple points in a single value;
-2 - display not resetting result after another input;
+Done atm.
