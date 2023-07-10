@@ -7,33 +7,36 @@
     </head>
     <body>
         <div class="calculator">
+            <!-- <p>JavaScript Calculator</p> -->
             <div class="text">
                 <p id="display"></p>
             </div>
             <div class="buttons">
-                <div class="numbers">     
-                    <button id="7" value="7" onclick="queue(this.value)">7</button>
-                    <button id="8" value="8" onclick="queue(this.value)">8</button>
-                    <button id="9" value="9" onclick="queue(this.value)">9</button><br>
-                    <button id="4" value="4" onclick="queue(this.value)">4</button>
-                    <button id="5" value="5" onclick="queue(this.value)">5</button>
-                    <button id="6" value="6" onclick="queue(this.value)">6</button><br>
-                    <button id="1" value="1" onclick="queue(this.value)">1</button>
-                    <button id="2" value="2" onclick="queue(this.value)">2</button>
-                    <button id="3" value="3" onclick="queue(this.value)">3</button><br>
-                    <button id="0" value="0" onclick="queue(this.value)">0</button>
-                    <button id="." value="." onclick="decimal()">.</button>
-                </div>
-                <div class="signs">    
-                    <button id="plus" value="+" onclick="operate(this.value)">+</button>
-                    <button id="minus" value="-" onclick="operate(this.value)">-</button>
-                    <button id="mult" value="*" onclick="operate(this.value)">*</button>
-                    <button id="divid" value="/" onclick="operate(this.value)">/</button>
-                    <button id="equals" value="=" onclick="equals(buffer2)">=</button>
+                <div class="box">
+                    <div class="numbers">     
+                        <button id="7" value="7" onclick="queue(this.value)">7</button>
+                        <button id="8" value="8" onclick="queue(this.value)">8</button>
+                        <button id="9" value="9" onclick="queue(this.value)">9</button><br>
+                        <button id="4" value="4" onclick="queue(this.value)">4</button>
+                        <button id="5" value="5" onclick="queue(this.value)">5</button>
+                        <button id="6" value="6" onclick="queue(this.value)">6</button><br>
+                        <button id="1" value="1" onclick="queue(this.value)">1</button>
+                        <button id="2" value="2" onclick="queue(this.value)">2</button>
+                        <button id="3" value="3" onclick="queue(this.value)">3</button><br>
+                        <button id="0" value="0" onclick="queue(this.value)">0</button>
+                        <button id="." value="." onclick="decimal()">.</button>
+                    </div>
+                    <div class="signs">    
+                        <button id="plus" value="+" onclick="operate(this.value)">+</button>
+                        <button id="minus" value="-" onclick="operate(this.value)">-</button>
+                        <button id="mult" value="*" onclick="operate(this.value)">*</button>
+                        <button id="divid" value="/" onclick="operate(this.value)">/</button>
+                        <button id="equals" value="=" onclick="equals(buffer2)">=</button>
+                    </div>
                 </div>
                 <div class="utility">
                     <button id="clear" onclick="clear(); display.textContent = ''">Clear</button>
-                    <button id="backspace" onclick="backspace()">Backspace</button>
+                    <button id="backspace" onclick="backspace()">Back</button>
                 </div>
             </div>
         </div>

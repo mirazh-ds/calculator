@@ -3,6 +3,8 @@ let buffer = [];
 let buffer2 = [];
 let result;
 const display = document.getElementById('display');
+const buttons = document.querySelectorAll('button');
+display.textContent = "";
 
 function queue(num) {
 
@@ -115,6 +117,7 @@ function operate(sign) {
         }
     }
 }
+
 
 function equals() {
     

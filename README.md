@@ -8,11 +8,13 @@ Basic calculator project.
 
 # To do:
 
-1 - CSS;
+1 - CSS; //Added basic
 2 - fixes;
-3 - thin out html buttons functions;
-4 - backspace button;
+3 - thin out html buttons functions; //Done
+4 - backspace button; //Done
+5 - remove onclick from the html buttons;
 
 # To fix:
 
-Done atm.
+1 - NaN as a result after two following operations;
+2 - Text overflow after adding css with big numbers;
